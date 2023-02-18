@@ -7,12 +7,7 @@ import UnauthenticatedPage from "./routes/UnauthenticatedPage";
 export default function Main() {
   const { user } = useContext(UserContext);
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
+    <div style={{ width: "100%" }}>
       {user && (
         <JobsContextProvider>
           <AuthenticatedPage />
