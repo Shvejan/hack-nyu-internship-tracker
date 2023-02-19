@@ -12,7 +12,7 @@ const Register = (props) => {
   return (
     <div className="form-div">
       <div className="form">
-        <h2 className="title">Application Tracker</h2>
+        <h2 className="title"> Tracy Application Tracker</h2>
         <div className="form-body">
           <div className="username">
             <label className="form__label" for="name">
@@ -85,7 +85,7 @@ const Login = (props) => {
   return (
     <div className="form-div">
       <div className="form">
-        <h2 className="title">Application Tracker</h2>
+        <h2 className="title"> Tracy Application Tracker</h2>
         <div className="form-body">
           <div className="email">
             <label className="form__label" for="email">
