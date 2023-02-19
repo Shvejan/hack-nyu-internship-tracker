@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
-import { JobsContextProvider } from "./context/JobsContext";
+import { fetchJobsApi } from "./apis/fetchJobs";
+import JobsContext, { JobsContextProvider } from "./context/JobsContext";
 import UserContext from "./context/UserContext";
 import AuthenticatedPage from "./routes/AuthenticatedPage";
 import UnauthenticatedPage from "./routes/UnauthenticatedPage";
@@ -10,6 +11,7 @@ export default function Main() {
   useEffect(() => {
     setuser(JSON.parse(window.sessionStorage.getItem(sessionStorageUser)));
   }, []);
+
   return (
     <div style={{ width: "100%" }}>
       {user && (

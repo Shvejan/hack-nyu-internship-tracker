@@ -7,8 +7,10 @@ export default function NavBar() {
   return (
     <nav className="nav-bar">
       <div className="nav-title row">
-        <h2 className="col-1">Tracy</h2>
-        <p className="col-9" style={{ marginTop: "12px" }}>
+        <h2 className="col-1" style={{ marginTop: "10px" }}>
+          Tracy
+        </h2>
+        <p className="col-9" style={{ marginTop: "22px" }}>
           Application Tracker
         </p>
         <p className="col-2" style={{ marginTop: "22px" }}>

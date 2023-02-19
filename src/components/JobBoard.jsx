@@ -1,82 +1,53 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 // import JobsContext from "../context/JobsContext";
 import Card from "./Card";
-import appleLogo from "../images/apple.jpg";
-import amazonLogo from "../images/amazonlogo.jpg";
-import googleLogo from "../images/googlelogo.png";
-import metaLogo from "../images/metalogo.jpg";
 
-const categories = [
-  {
-    title: "Applied",
-    data: [
-      {
-        company: "Apple",
-        jobTitle: "Software Intern",
-        image: appleLogo,
-      },
+import JobsContext from "../context/JobsContext";
 
-      {
-        company: "Amazon",
-        jobTitle: "Data Science Intern",
-        image: amazonLogo,
-      },
-      {
-        company: "Google",
-        jobTitle: "Frontend Developer Intern",
-        image: googleLogo,
-      },
-    ],
-  },
-  {
-    title: "Online Assessment",
-    data: [
-      {
-        company: "Meta",
-        jobTitle: "Security Enginner",
-        image: metaLogo,
-      },
-    ],
-  },
-  {
-    title: "Interview",
-    data: [],
-  },
-  {
-    title: "Rejected",
-    data: [],
-  },
-];
+const colorMap = {
+  Applied: "#63a5c7;",
+  "Online Assessment": "#F99417",
+  Interview: "#647845",
+  Rejected: "#E96479",
+};
 
 export default function JobBoard() {
-  // const { jobs } = useContext(JobsContext);
+  const { jobs } = useContext(JobsContext);
+
   return (
     <div className="col-10 right-dock">
       <div className="row category-section">
-        {categories.map((c, i) => (
-          <div className="col-3 no-gitter" key={i}>
-            <div className="category">
-              <div className="category-title">
-                <p>{c.title}</p>
-              </div>
-              <div className="card-holder">
-                {!c.data.length && (
-                  <p style={{ textAlign: "center", justifyContent: "center" }}>
-                    No Jobs found
-                  </p>
-                )}
-                {c.data.map((job, i) => (
-                  <Card
-                    key={i}
-                    company={job.company}
-                    jobTitle={job.jobTitle}
-                    image={job.image}
-                  />
-                ))}
+        {jobs &&
+          jobs.length &&
+          jobs.map((c, i) => (
+            <div className="col-3 no-gitter" key={i}>
+              <div className="category">
+                <div
+                  className="category-title"
+                  style={{ backgroundColor: colorMap[c.title] }}
+                >
+                  <p>{c.title}</p>
+                </div>
+                <div className="card-holder">
+                  {!c.data.length && (
+                    <p
+                      style={{ textAlign: "center", justifyContent: "center" }}
+                    >
+                      No Jobs found
+                    </p>
+                  )}
+                  {c.data.map((job, index) => (
+                    <Card
+                      key={index}
+                      company={job[0]}
+                      jobTitle={job[1]}
+                      emailContent={job[3]}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
         <div></div>
       </div>
     </div>
