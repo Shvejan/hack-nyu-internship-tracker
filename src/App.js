@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./App.css";
-import UserContext, { UserContextProvider } from "./context/UserContext";
+import { UserContextProvider } from "./context/UserContext";
 import Main from "./Main";
 
 function App() {
-  const user = useContext(UserContext);
+  // const user = useContext(UserContext);
   return (
     <div className="app-body">
       <UserContextProvider>

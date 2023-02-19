@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import JobsContext from "../context/JobsContext";
+import React from "react";
+// import JobsContext from "../context/JobsContext";
 import Card from "./Card";
 import appleLogo from "../images/apple.jpg";
 import amazonLogo from "../images/amazonlogo.jpg";
@@ -49,7 +49,7 @@ const categories = [
 ];
 
 export default function JobBoard() {
-  const { jobs } = useContext(JobsContext);
+  // const { jobs } = useContext(JobsContext);
   return (
     <div className="col-10 right-dock">
       <div className="row category-section">

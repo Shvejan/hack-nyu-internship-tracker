@@ -2,7 +2,6 @@ import React from "react";
 import JobBoard from "../components/JobBoard";
 import LeftDock from "../components/LeftDock";
 import NavBar from "../components/NavBar";
-import JobsContext from "../context/JobsContext";
 import "../css/authenticated-styles.css";
 
 export default function AuthenticatedPage() {

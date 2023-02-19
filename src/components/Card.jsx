@@ -10,7 +10,7 @@ export default function Card(props) {
         </div>
         <div className="col-3">
           <div className="card-img-container">
-            <img src={props.image} className="card-img" />
+            <img src={props.image} className="card-img" alt="ig" />
           </div>
         </div>
       </div>
