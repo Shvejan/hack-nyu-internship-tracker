@@ -13,24 +13,22 @@
   padding-left: 40px;
   flex-direction: row;
 }
-/* .nav-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: center;
-} */
+.nav-title {
+  width: 100%;
+}
 .dashboard-layout {
   height: 100%;
 }
 .left-dock {
-  background-color: #005faf;
   height: 100%;
   padding: 0px;
+  background-color: #005faf;
 }
 .right-dock {
   height: 100%;
 }
-.dock-item {
+.hover-div {
+  cursor: pointer;
   font-size: 18px;
   width: 100%;
   color: white;
@@ -44,7 +42,15 @@
   font-size: 20px;
   display: flex;
   align-items: center;
+  /* background-color: red; */
+  margin-bottom: 10px;
 }
+
+.hover-div:hover {
+  background-color: white;
+  color: black;
+}
+
 .category-section {
   margin-right: 10px;
   height: 100vh;
@@ -72,6 +78,7 @@
   justify-content: center;
   align-items: center;
   font-size: 22px;
+  box-shadow: 5px 5px 20px rgb(176, 176, 176);
 }
 
 .no-gitter {
@@ -91,8 +98,9 @@
 .card {
   margin-top: 20px;
   padding: 10px;
-  background-color: rgb(224, 224, 224);
+  background-color: rgb(237, 237, 237);
   display: flex;
+  box-shadow: 5px 5px 20px rgb(176, 176, 176);
 }
 .card-holder {
   margin-top: 20px;

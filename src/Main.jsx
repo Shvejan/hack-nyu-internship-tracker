@@ -1,11 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { JobsContextProvider } from "./context/JobsContext";
 import UserContext from "./context/UserContext";
 import AuthenticatedPage from "./routes/AuthenticatedPage";
 import UnauthenticatedPage from "./routes/UnauthenticatedPage";
+import { sessionStorageUser } from "./utils";
 
 export default function Main() {
-  const { user } = useContext(UserContext);
+  const { user, setuser } = useContext(UserContext);
+  useEffect(() => {
+    setuser(JSON.parse(window.sessionStorage.getItem(sessionStorageUser)));
+  }, []);
   return (
     <div style={{ width: "100%" }}>
       {user && (

@@ -59,7 +59,7 @@ const Register = (props) => {
           <div
             type="submit"
             className="btn"
-            onClick={() => RegisterApi(name, email, password)}
+            onClick={() => RegisterApi(name, email, password, props.setuser)}
           >
             Submit
           </div>
@@ -118,7 +118,7 @@ const Login = (props) => {
           <button
             type="submit"
             className="btn"
-            onClick={() => LoginApi(email, password)}
+            onClick={() => LoginApi(email, password, props.setuser)}
           >
             Submit
           </button>
