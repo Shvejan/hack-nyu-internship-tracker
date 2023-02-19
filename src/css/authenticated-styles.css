@@ -5,15 +5,20 @@
   height: 100%;
 }
 .nav-bar {
-  /* background-color: violet; */
   background-color: #460570;
   height: 70px;
   color: white;
   display: flex;
   align-items: center;
   padding-left: 40px;
+  flex-direction: row;
 }
-
+/* .nav-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+} */
 .dashboard-layout {
   height: 100%;
 }

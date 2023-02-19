@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { LoginApi, RegisterApi } from "../apis/login";
+import UserContext from "../context/UserContext";
 
 import "../css/unauthenticated-styles.css";
 
@@ -7,6 +8,7 @@ const Register = (props) => {
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
+
   return (
     <div className="form-div">
       <div className="form">
@@ -54,23 +56,23 @@ const Register = (props) => {
           </div>
         </div>
         <div class="footer">
-          <button
+          <div
             type="submit"
             className="btn"
             onClick={() => RegisterApi(name, email, password)}
           >
-            Register
-          </button>
+            Submit
+          </div>
         </div>
         <div className="btns-container row">
-          <button className="button col-6">Register</button>
+          <div className="button col-6 active">Register</div>
 
-          <button
+          <div
             className="button col-6"
             onClick={() => props.setregister(false)}
           >
             Login
-          </button>
+          </div>
         </div>
       </div>
     </div>
@@ -118,18 +120,18 @@ const Login = (props) => {
             className="btn"
             onClick={() => LoginApi(email, password)}
           >
-            Login
+            Submit
           </button>
         </div>
         <div className="btns-container row">
-          <button
-            className="button col-6"
+          <div
+            className="button col-6 "
             onClick={() => props.setregister(true)}
           >
             Register
-          </button>
+          </div>
 
-          <button className="button col-6">Login</button>
+          <div className="button col-6 active">Login</div>
         </div>
       </div>
     </div>
@@ -137,12 +139,14 @@ const Login = (props) => {
 };
 export default function UnauthenticatedPage() {
   const [register, setregister] = useState(true);
+  const { setuser } = useContext(UserContext);
+
   return (
     <div className="row form-container">
       <div className="col-6"></div>
       <div className="col-6">
-        {register && <Register setregister={setregister} />}
-        {!register && <Login setregister={setregister} />}
+        {register && <Register setregister={setregister} setuser={setuser} />}
+        {!register && <Login setregister={setregister} setuser={setuser} />}
       </div>
     </div>
   );
