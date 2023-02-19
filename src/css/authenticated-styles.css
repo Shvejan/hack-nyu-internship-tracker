@@ -7,7 +7,7 @@
 .nav-bar {
   /* background-color: violet; */
   background-color: #460570;
-  height: 60px;
+  height: 70px;
   color: white;
   display: flex;
   align-items: center;
@@ -31,6 +31,9 @@
   color: white;
   border-width: 1px;
   border-style: solid;
+  border-left: none;
+  border-right: none;
+  border-top: none;
   padding: 18px;
   padding-left: 40px;
   font-size: 20px;
@@ -44,7 +47,7 @@
 .category {
   /* background-color: #005faf; */
   border-style: solid;
-  border-color: grey;
+  border-color: rgb(192, 192, 192);
   border-bottom: none;
   border-left: none;
   border-top: none;

@@ -11,12 +11,8 @@ export default function AuthenticatedPage() {
     <div className="dashboard-body">
       <NavBar />
       <div className="dashboard-layout row">
-        <div className="col-2 left-dock">
-          <LeftDock />
-        </div>
-        <div className="col-10 right-dock">
-          <JobBoard />
-        </div>
+        <LeftDock />
+        <JobBoard />
       </div>
     </div>
   );

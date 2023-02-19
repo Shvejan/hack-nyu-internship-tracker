@@ -51,32 +51,34 @@ const categories = [
 export default function JobBoard() {
   const { jobs } = useContext(JobsContext);
   return (
-    <div className="row category-section">
-      {categories.map((c, i) => (
-        <div className="col-3 no-gitter" key={i}>
-          <div className="category">
-            <div className="category-title">
-              <p>{c.title}</p>
-            </div>
-            <div className="card-holder">
-              {!c.data.length && (
-                <p style={{ textAlign: "center", justifyContent: "center" }}>
-                  No Jobs found
-                </p>
-              )}
-              {c.data.map((job, i) => (
-                <Card
-                  key={i}
-                  company={job.company}
-                  jobTitle={job.jobTitle}
-                  image={job.image}
-                />
-              ))}
+    <div className="col-10 right-dock">
+      <div className="row category-section">
+        {categories.map((c, i) => (
+          <div className="col-3 no-gitter" key={i}>
+            <div className="category">
+              <div className="category-title">
+                <p>{c.title}</p>
+              </div>
+              <div className="card-holder">
+                {!c.data.length && (
+                  <p style={{ textAlign: "center", justifyContent: "center" }}>
+                    No Jobs found
+                  </p>
+                )}
+                {c.data.map((job, i) => (
+                  <Card
+                    key={i}
+                    company={job.company}
+                    jobTitle={job.jobTitle}
+                    image={job.image}
+                  />
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      ))}
-      <div></div>
+        ))}
+        <div></div>
+      </div>
     </div>
   );
 }

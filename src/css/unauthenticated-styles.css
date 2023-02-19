@@ -1,15 +1,19 @@
 .form-div {
-  /* display: flex; */
+  display: flex;
   justify-content: center;
+  background-color: #460570;
+  height: 100%;
+  align-items: center;
 }
 .title {
   text-align: center;
 }
 .form {
+  height: 400px;
   justify-content: center;
   align-items: center;
   background-color: white;
-  border-radius: 5px;
+  border-radius: 20px;
   width: 550px;
   padding: 20px;
 }
